@@ -6,7 +6,10 @@ def vscode_extensions():
   """
   
   import subprocess
+  from logzero import logger
 
+
+  logger.info("Running shell command to determine installed extensions...")
   shell = subprocess.run(["code", "--list-extensions"], capture_output=True)
   extensions = shell.stdout.decode("utf-8").splitlines()
 

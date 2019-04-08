@@ -5,3 +5,7 @@ build-dist:
 .PHONY: publish
 publish:
 	twine upload dist/*
+
+.PHONY: clean
+clean: 
+	rm -rf build/ dist/ *.egg-info
